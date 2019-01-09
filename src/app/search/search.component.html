@@ -1,0 +1,4 @@
+<div>
+  <input [(ngModel)]="inputTag" placeholder="Search Quotes by Tags" (keyup.enter)="searchTagQuote(inputTag)" />
+  <app-quotes [tagName]="tagSearch"></app-quotes>
+</div>
