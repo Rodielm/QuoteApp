@@ -1,6 +1,6 @@
 export interface Quote {
   id: number;
-  tags: [];
+  tags: String[];
   author: String;
   body: String;
 }
