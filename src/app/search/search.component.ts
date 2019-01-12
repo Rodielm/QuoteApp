@@ -14,8 +14,11 @@ export class SearchComponent {
 
   searchTagQuote(tag: String): void {
     // this.tagSearch = tag;
-    this.quoteService.getQuoteByTag(tag).subscribe(quotes => {
-      console.log(quotes);
-    });
+    // this.quoteService.getQuoteByTag(tag).subscribe(quotes => {
+    //   // console.log(quotes);
+    //   this.tagSearch = tag;
+    // });
+
+    this.tagSearch = tag;
   }
 }

@@ -3,4 +3,5 @@ export interface Quote {
   tags: String[];
   author: String;
   body: String;
+  like: String;
 }

@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import config from "../config/config";
+import { Quotes } from "../model/quotes";
 
 @Injectable({
   providedIn: "root"
@@ -15,18 +16,20 @@ export class QuotesService {
     })
   };
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getQuoteofDay(): Observable<any> {
-    return this.httpClient.get(`${this.configUrl.API_URL}/qotd`);
+    return this.http.get(`${this.configUrl.API_URL}/qotd`);
   }
 
   getQuoteByTag(tag: String): Observable<any> {
-    return this.httpClient.get(
+    return this.http.get(
       `${this.configUrl.API_URL}/quotes/?filter=${tag}&type=tag`,
       this.httpOptions
     );
   }
 
-  getQuotes() {}
+  getQuotes(): Observable<Quotes> {
+    return this.http.get<Quotes>("assets/testQuote.json");
+  }
 }
